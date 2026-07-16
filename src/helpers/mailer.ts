@@ -4,6 +4,7 @@ import bcrypt from "bcryptjs"
 import User from "@/src/models/userModels"
 
 export const sendEmail = async({email, emailType, userId}:any) => {
+   console.log("DOMAIN =", process.env.DOMAIN);
     try {
         const hashedToken = await bcrypt.hash(userId.toString(),10)
 
